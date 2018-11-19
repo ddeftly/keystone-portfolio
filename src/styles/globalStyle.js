@@ -7,10 +7,12 @@ const colors = {
 }
 
 export const appHeader = {
-    display: 'flex',
-    flexDirection: 'column',
+    display: 'grid',
+    gridTemplate: '5vh 1fr 5vh / 5vh 1fr 5vh',
     alignItems: 'center',
-    minHeight: '100vh'
+    minHeight: '100vh',
+    margin: 0,
+    padding: 0
 }
 
 const globalStyle = {

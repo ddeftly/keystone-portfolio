@@ -28,14 +28,20 @@ const Box = posed.div({
         width: '0%',
         transition: (props) => tween({...props, duration: 1000}) 
     },
+    partUnselected: {
+        width: '10%',
+    },
     neutral: { 
         width: '50%',
         transition: (props) => tween({...props, duration: 1000})  
     },
+    partSelected: {
+        width: '90%',
+    },
     selected: { 
         width: '100%',
         transition: (props) => tween({...props, duration: 1000})  
-    }
+    },
 })
 
 export const InnerContainer = styled(Box)`

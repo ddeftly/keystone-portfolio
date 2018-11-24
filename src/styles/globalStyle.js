@@ -6,11 +6,12 @@ const colors = {
     fireyRose: '#EE596C'
 }
 
-export const appHeader = {
+export const homeHeader = {
     display: 'grid',
-    gridTemplate: '5vh 1fr 5vh / 5vh 1fr 5vh',
+    gridTemplate: '7vh 1fr 7vh / 7vh 1fr 7vh',
     alignItems: 'center',
     minHeight: '100vh',
+    maxWidth: '100vw',
     margin: 0,
     padding: 0
 }

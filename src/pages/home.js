@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import { Route, Link } from "react-router-dom";
 import { KeystoneOutline, DFOutline } from '../assets/customSVGs';
 import { MainContainer, HeaderContainer, InnerContainer, HorizontalMargin, VerticalMargin } from '../components/misc/containers';
 import { HeaderText } from '../components/misc/text';
@@ -34,11 +35,12 @@ export default class Home extends Component {
             <HorizontalMargin style={{gridArea: '1 / 1 / 1 / 4', ...mainContainers.horizontal}}/>
             
             <VerticalMargin style={{gridArea: '2 / 1 / 2 / 1', ...mainContainers.vertical}}>
+            <Link to='/portfolio'>
               <DFOutline                
-                onClick={() => this.setState({ selection: 'unselected' })}
                 extendMouseOver={() => this.setState({ selection: 'partUnselected' })}
                 extendMouseLeave={() => this.setState({ selection: 'neutral' })}
               />
+            </Link>
             </VerticalMargin>
 
             <MainContainer style={{gridArea: '2 / 2 / 2 / 2', backgroundColor: globalStyle.colors.portfolioGray}}> 
@@ -91,11 +93,12 @@ export default class Home extends Component {
             </MainContainer>
 
             <VerticalMargin style={{gridArea: '2 / 3 / 2 / 3', ...mainContainers.vertical}}>
-              <KeystoneOutline 
-                  onClick={() => this.setState({ selection: 'selected' })}
-                  extendMouseOver={() => this.setState({ selection: 'partSelected' })}
-                  extendMouseLeave={() => this.setState({ selection: 'neutral' })}
-              />
+              <Link to='/keystone'>
+                <KeystoneOutline 
+                    extendMouseOver={() => this.setState({ selection: 'partSelected' })}
+                    extendMouseLeave={() => this.setState({ selection: 'neutral' })}
+                />
+              </Link>
             </VerticalMargin>
 
             <HorizontalMargin style={{gridArea: '3 / 1 / 3 / 4', ...mainContainers.horizontal}}/>

@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom'
 
 import Home from './pages/home';
+import Portfolio from './pages/portfolio';
+import Keystone from './pages/keystone';
 
-class App extends Component {
-
-  render() {
-    return (
-      <div className="App">
-        <Home/>
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Switch>
+    <Route path='/portfolio' component={Portfolio}/>
+    <Route path='/keystone' component={Keystone}/>
+    <Home/>
+  </Switch>
+)
 
 export default App;

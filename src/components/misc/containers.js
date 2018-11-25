@@ -46,5 +46,7 @@ const Box = posed.div({
 
 export const InnerContainer = styled(Box)`
     height: 100%;
-    background: ${props => props.backgroundColor}
+    background: ${props => props.backgroundColor};
+    justifyContent: 'flex-end';
+    alignItems: 'flex-end';
 `;

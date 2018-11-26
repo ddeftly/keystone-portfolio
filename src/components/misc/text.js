@@ -34,3 +34,18 @@ export const HeaderText = posed(Header)({
         transition: (props) => tween({...props, duration: 1000})  
     },
 })
+
+const Menu = styled.text`
+    font-size: 2em;
+    color: black;
+`;
+
+export const MenuText = posed(Menu)({
+    unselected: {
+        opacity: 0,
+        x: '0%'
+    }, 
+    selected: {
+        opacity: 1
+    }
+}) 

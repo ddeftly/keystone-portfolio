@@ -21,12 +21,11 @@ export const HorizontalMargin = styled.div`
     width: 100%;
 `;
 
-// Posed Components
-
+/// Posed Components
+//HOME
 const Box = posed.div({
     unselected: { 
         width: '0%',
-        transition: (props) => tween({...props, duration: 1000}) 
     },
     partUnselected: {
         width: '10%',
@@ -44,9 +43,27 @@ const Box = posed.div({
     },
 })
 
-export const InnerContainer = styled(Box)`
+export const HomeInnerContainer = styled(Box)`
     height: 100%;
     background: ${props => props.backgroundColor};
     justifyContent: 'flex-end';
     alignItems: 'flex-end';
+`;
+
+// PAGE
+const Box2 = posed.div({
+    selected: {
+        width: '20%'
+    },
+    unselected: {
+        width: '0%'
+    }
+})
+
+export const PageInnerContainer = styled(Box2)`
+    height: 100%;
+    background: ${props => props.backgroundColor};
+    justifyContent: 'flex-end';
+    alignItems: 'flex-end';
+    position: 'absolute'
 `;

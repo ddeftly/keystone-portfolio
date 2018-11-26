@@ -2,3 +2,13 @@
     font-family: 'Roboto' sans-serif;
     font-weight: 800
 }
+
+/* TEXT STYLES */
+
+.header {
+    font-family: 'Roboto' sans-serif;
+}
+
+#main {
+    font-weight: 800
+}

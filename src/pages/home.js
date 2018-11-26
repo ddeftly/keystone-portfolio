@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 
 import { Route, Link } from "react-router-dom";
 import { KeystoneOutline, DFOutline } from '../assets/customSVGs';
-import { MainContainer, HeaderContainer, InnerContainer, HorizontalMargin, VerticalMargin } from '../components/misc/containers';
+import { MainContainer, HeaderContainer, HomeInnerContainer, HorizontalMargin, VerticalMargin } from '../components/misc/containers';
 import { HeaderText } from '../components/misc/text';
 
 import { mainContainers } from '../styles/misc/containerStyles';
 import globalStyle, { homeHeader } from '../styles/globalStyle';
 
-import '../styles/pages/homeStyle.css';
+import '../styles/globalCSS.css';
 
 const textLeft1 = 57;
 const textLeft2 = (textLeft1 * .82);
@@ -30,7 +30,7 @@ export default class Home extends Component {
     render() {
       return (
         <div className="Home">
-          <header style={{...homeHeader}}>
+          <header style={{...homeHeader}} className='header' id='main'>
           
             <HorizontalMargin style={{gridArea: '1 / 1 / 1 / 4', ...mainContainers.horizontal}}/>
             
@@ -66,7 +66,7 @@ export default class Home extends Component {
               >
                 COME
               </HeaderText>
-              <InnerContainer backgroundColor={globalStyle.colors.keystoneBlack} pose={this.state.selection} >
+              <HomeInnerContainer backgroundColor={globalStyle.colors.keystoneBlack} pose={this.state.selection} >
                 <HeaderText 
                   pose={this.state.selection}
                   style={{ position: 'relative', left: `${textLeft1}%`, top: '25%'}}
@@ -89,7 +89,7 @@ export default class Home extends Component {
                 >
                   DAVID
                 </HeaderText>
-              </InnerContainer>
+              </HomeInnerContainer>
             </MainContainer>
 
             <VerticalMargin style={{gridArea: '2 / 3 / 2 / 3', ...mainContainers.vertical}}>

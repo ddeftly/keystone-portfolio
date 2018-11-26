@@ -38,6 +38,7 @@ export default class AnimatedMenu extends Component {
         } else {
             this.setState({ selection: 'unselected' })
         }
+        this.props.onClick()
     }
     
     render() {

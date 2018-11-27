@@ -5,7 +5,6 @@ import posed from 'react-pose';
 import { tween } from 'popmotion';
 
 export const Header = styled.text`
-    font-size: 10em;
     color: white; 
 `;
 
@@ -18,6 +17,7 @@ export const HeaderText = posed(Header)({
     partUnselected: {
         x: (props) => props.partUnselected.xPosition,
         opacity: (props) => props.partUnselected.opacity,
+        transition: (props) => tween({...props, duration: 1000})  
     },
     neutral: { 
         x: (props) => props.neutral.xPosition,
@@ -27,6 +27,7 @@ export const HeaderText = posed(Header)({
     partSelected: {
         x: (props) => props.partSelected.xPosition,
         opacity: (props) => props.partSelected.opacity,
+        transition: (props) => tween({...props, duration: 1000})  
     },
     selected: { 
         x: (props) => props.selected.xPosition,

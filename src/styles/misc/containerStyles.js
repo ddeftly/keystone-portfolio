@@ -8,7 +8,6 @@ export const mainContainers = {
     horizontal: {
         display: 'flex',
         flexDirection: 'row', 
-        justifyContent: 'center', 
         alignItems: 'center',
     }
 }

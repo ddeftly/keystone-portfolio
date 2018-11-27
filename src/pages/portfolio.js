@@ -48,8 +48,9 @@ export default class Portfolio extends Component {
         <div>
           <header style={{...homeHeader}}>
           
-            <HorizontalMargin style={{gridArea: '1 / 1 / 1 / 4', ...mainContainers.horizontal}}/>
-            
+            <HorizontalMargin id='subname' style={{gridArea: '1 / 2 / 1 / 2', ...mainContainers.horizontal}}>
+              <text>DAVID A FIGUEROA</text>
+            </HorizontalMargin>            
             <VerticalMargin style={{gridArea: '2 / 1 / 2 / 1', ...mainContainers.vertical}}>
                 <Menu 
                     onClick={this.switchContainer}

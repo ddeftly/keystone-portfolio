@@ -31,7 +31,7 @@ export default class Portfolio extends Component {
         <div>
           <header style={{...homeHeader}}>
             <Menu 
-              style={{position: 'absolute', left: '5em', top: 'calc(50% - 2.5em)'}}
+              style={{position: 'absolute', left: '5em', top: 'calc(50% - 2.5em)', zIndex: 1}}
               onClick={this.switchContainer}
             />
           
@@ -42,8 +42,12 @@ export default class Portfolio extends Component {
             </VerticalMargin>
 
             <MainContainer style={{gridArea: '2 / 2 / 2 / 2', backgroundColor: globalStyle.colors.portfolioGray}}>
-              <PageInnerContainer backgroundColor='white' pose={this.state.selection} style={{justifyContent: 'center', alignItems: 'center'}} className="header">
-                <MenuText style={{position: 'absolute'}} pose={this.state.selection}>RESUME</MenuText>
+              <PageInnerContainer backgroundColor='white' pose={this.state.selection} className="header">
+                <div style={{ textAlign: 'left', display: 'flex', flexDirection: 'column', height: '50%', top: '25%', position: 'relative', justifyContent: 'center', alignItems: 'center' }}>
+                  <MenuText pose={this.state.selection}>RESUME</MenuText>
+                  <MenuText pose={this.state.selection}>WORK</MenuText>
+                  <MenuText pose={this.state.selection}>PLAY</MenuText>
+                </div>
               </PageInnerContainer>
             </MainContainer>
 

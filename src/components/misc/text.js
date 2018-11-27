@@ -40,12 +40,23 @@ const Menu = styled.text`
     color: black;
 `;
 
-export const MenuText = posed(Menu)({
+const MenuT = posed(Menu)({
     unselected: {
         opacity: 0,
-        x: '0%'
+        x: '0%',
+        transition: (props) => tween({...props, duration: 100})  
     }, 
     selected: {
-        opacity: 1
+        opacity: 1,
+        x: '20%',
+        transition: (props) => tween({...props, duration: 1000})  
     }
 }) 
+
+export const MenuText = (props) => (
+    <div style={{ width: '50%' }}>
+        <MenuT pose={props.pose}>
+            {props.children}
+        </MenuT>
+    </div>
+)

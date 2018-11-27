@@ -46,8 +46,6 @@ const Box = posed.div({
 export const HomeInnerContainer = styled(Box)`
     height: 100%;
     background: ${props => props.backgroundColor};
-    justifyContent: 'flex-end';
-    alignItems: 'flex-end';
 `;
 
 // PAGE
@@ -63,7 +61,5 @@ const Box2 = posed.div({
 export const PageInnerContainer = styled(Box2)`
     height: 100%;
     background: ${props => props.backgroundColor};
-    justifyContent: 'flex-end';
-    alignItems: 'flex-end';
     position: 'absolute'
 `;

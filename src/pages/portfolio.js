@@ -3,8 +3,8 @@ import { Route, Link } from "react-router-dom";
 
 import { KeystoneOutline } from '../assets/customSVGs';
 import Menu from '../components/misc/animatedMenu';
-import { MainContainer, PageInnerContainer, HorizontalMargin, VerticalMargin } from '../components/misc/containers';
-import { MenuText } from '../components/misc/text';
+import { MainContainer, PageInnerContainer, PageInnerContainer2, HorizontalMargin, VerticalMargin } from '../components/misc/containers';
+import { MenuText, Header } from '../components/misc/text';
 
 import { mainContainers } from '../styles/misc/containerStyles';
 import globalStyle, { homeHeader } from '../styles/globalStyle';
@@ -12,10 +12,18 @@ import '../styles/globalCSS.css';
 
 import '../styles/pages/homeStyle.css';
 
+const portfolioMenu = [
+    { key: 'CODE', },
+    { key: 'HEALTH' },
+    { key: 'PLAY' }
+];
+
 export default class Portfolio extends Component {
     state = {
-      selection: 'unselected',
-      menuSelected: false
+        keystoneSelection: 'unselected',
+        selection: 'unselected',
+        menuSelected: false,
+        selectedItem: 'CODE'
     }
   
     switchContainer = () => {
@@ -25,37 +33,63 @@ export default class Portfolio extends Component {
         this.setState({ selection: 'unselected' })
       }
     }
+
+    switchMenuItem = (item) => {
+        this.setState({ selectedItem: item })
+        console.log(item.key)
+    }
+
+    componentDidMount() {
+        console.log(this.state.selectedItem)
+    }
   
     render() {
       return (
         <div>
           <header style={{...homeHeader}}>
-            <Menu 
-              style={{position: 'absolute', left: '5em', top: 'calc(50% - 2.5em)', zIndex: 1}}
-              onClick={this.switchContainer}
-            />
           
             <HorizontalMargin style={{gridArea: '1 / 1 / 1 / 4', ...mainContainers.horizontal}}/>
             
             <VerticalMargin style={{gridArea: '2 / 1 / 2 / 1', ...mainContainers.vertical}}>
-
+                <Menu 
+                    onClick={this.switchContainer}
+                />
             </VerticalMargin>
 
             <MainContainer style={{gridArea: '2 / 2 / 2 / 2', backgroundColor: globalStyle.colors.portfolioGray}}>
-              <PageInnerContainer backgroundColor='white' pose={this.state.selection} className="header">
+              <PageInnerContainer style={{backgroundColor: 'white'}} pose={this.state.selection} className="header">
                 <div style={{ textAlign: 'left', display: 'flex', flexDirection: 'column', height: '50%', top: '25%', position: 'relative', justifyContent: 'center', alignItems: 'center' }}>
-                  <MenuText pose={this.state.selection}>RESUME</MenuText>
-                  <MenuText pose={this.state.selection}>WORK</MenuText>
-                  <MenuText pose={this.state.selection}>PLAY</MenuText>
+                    {
+                        portfolioMenu.map((item) => (
+                            <MenuText 
+                                onClick={() => this.setState({ selectedItem: item.key })                            }
+                                style={{ 
+                                    backgroundColor: (this.state.selectedItem === item.key ? globalStyle.colors.electricBlue : null), 
+                                    cursor: 'pointer'
+                                }} 
+                                pose={this.state.selection}
+                                key={item.key}
+                            >
+                                {item.key}
+                            </MenuText>
+                        ))
+                    }
                 </div>
               </PageInnerContainer>
+              <PageInnerContainer2 pose={this.state.keystoneSelection} style={{position: 'absolute', right: '3.3%', height: '86%', backgroundColor: globalStyle.colors.keystoneBlack, cursor: 'default'}}  className="header">
+                    <div style={{transform: 'rotate(270deg)', top: '72%', position: 'relative', paddingLeft: '1.3em'}}>
+                        <Header style={{ color: 'white', fontSize: '5em' }}>
+                            KEYSTONE
+                        </Header>
+                    </div>
+              </PageInnerContainer2>
             </MainContainer>
 
             <VerticalMargin style={{gridArea: '2 / 3 / 2 / 3', ...mainContainers.vertical}}>
               <Link to='/keystone'>
                 <KeystoneOutline 
-                    extendMouseOver={() => this.setState({ selection: 'partSelected' })}
-                    extendMouseLeave={() => this.setState({ selection: 'neutral' })}
+                    extendMouseOver={() => this.setState({ keystoneSelection: 'selected' })}
+                    extendMouseLeave={() => this.setState({ keystoneSelection: 'unselected' })}
                 />
               </Link>
             </VerticalMargin>

@@ -60,6 +60,16 @@ const Box2 = posed.div({
 
 export const PageInnerContainer = styled(Box2)`
     height: 100%;
-    background: ${props => props.backgroundColor};
     position: 'absolute'
 `;
+
+export const PageInnerContainer2 = posed.div({
+    selected: {
+        width: '5.5em',
+        opacity: 1
+    },
+    unselected: {
+        width: '0em',
+        opacity: 0
+    }
+})

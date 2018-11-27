@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import posed from 'react-pose';
 import { tween } from 'popmotion';
 
-const Header = styled.text`
+export const Header = styled.text`
     font-size: 10em;
     color: white; 
 `;
@@ -54,7 +54,7 @@ const MenuT = posed(Menu)({
 }) 
 
 export const MenuText = (props) => (
-    <div style={{ width: '50%' }}>
+    <div style={{ width: '50%', ...props.style }}>
         <MenuT pose={props.pose}>
             {props.children}
         </MenuT>

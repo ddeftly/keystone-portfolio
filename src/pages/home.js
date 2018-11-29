@@ -10,8 +10,8 @@ import globalStyle, { homeHeader } from '../styles/globalStyle';
 
 import '../styles/globalCSS.css';
 
-const textLeft1 = 26.25;
-const textLeft2 = (textLeft1 * 1.217);
+const textLeft1 = 31.5;
+const textLeft2 = (textLeft1 * 1.32);
 
 export default class Home extends Component {
     state = {
@@ -60,7 +60,7 @@ export default class Home extends Component {
               <HeaderText 
                 id='main'
                 pose={this.state.selection}
-                style={{ position: 'absolute', left: `${textLeft2}rem`, top: '45%', fontSize: '10em' }}
+                style={{ position: 'absolute', left: `${textLeft2}vw`, top: '45%', fontSize: '10em' }}
                 unSelected={{ xPosition: '0%', opacity: 0 }}
                 partUnselected={{ xPosition: '-20%', opacity: 0 }}
                 neutral={{ xPosition: '0%', opacity: 1 }}
@@ -73,7 +73,7 @@ export default class Home extends Component {
                 <HeaderText 
                   id='main'
                   pose={this.state.selection}
-                  style={{ position: 'absolute', left: `${textLeft1}rem`, top: '25%', fontSize: '10em'}}
+                  style={{ position: 'absolute', left: `${textLeft1}vw`, top: '25%', fontSize: '10em'}}
                   unSelected={{ xPosition: '100%', opacity: 0 }}
                   partUnselected={{ xPosition: '20%', opacity: 0 }}
                   neutral={{ xPosition: '0%', opacity: 1 }}
@@ -89,7 +89,7 @@ export default class Home extends Component {
                   unSelected={{ xPosition: '100%', opacity: 0 }}
                   partUnselected={{ xPosition: '35%', opacity: 1 }}
                   neutral={{ xPosition: '0%', opacity: 0 }}
-                  partSelected={{ xPosition: '100%', opacity: 0 }}
+                  partSelected={{ xPosition: '0%', opacity: 0 }}
                   selected={{ xPosition: '0%', opacity: 1.0 }}
                 >
                   DAVID FIGUEROA

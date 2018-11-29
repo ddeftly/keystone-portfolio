@@ -96,17 +96,15 @@ export default class Portfolio extends Component {
                     null
                 }
               </PageInnerContainer>
-              <PageInnerContainer2 pose={this.state.keystoneSelection} style={{position: 'absolute', right: '3.3%', height: '86%', backgroundColor: globalStyle.colors.keystoneBlack, cursor: 'default'}}  className="header">
-                    <div style={{transform: 'rotate(270deg)', top: '72%', position: 'relative', paddingLeft: '1.3em'}}>
+              <PageInnerContainer2 pose={'selected'} style={{transform: 'rotate(270deg)', position: 'absolute', right: '3.3%', height: '86%', backgroundColor: globalStyle.colors.keystoneBlack, cursor: 'default'}}  className="header">
                         <Header style={{ color: 'white', fontSize: '5em' }}>
                             KEYSTONE
                         </Header>
-                    </div>
               </PageInnerContainer2>
             </MainContainer>
 
             <VerticalMargin style={{gridArea: '2 / 3 / 2 / 3', ...mainContainers.vertical}}>
-              <Link to='/keystone'>
+              <Link to='/keystone'> 
                 <KeystoneOutline 
                     extendMouseOver={() => this.setState({ keystoneSelection: 'selected' })}
                     extendMouseLeave={() => this.setState({ keystoneSelection: 'unselected' })}

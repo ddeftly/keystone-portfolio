@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import { Route, Link } from "react-router-dom";
 
 import { KeystoneOutline } from '../assets/customSVGs';
-import Menu from '../components/misc/animatedMenu';
+import Menu, { MenuItem } from '../components/misc/animatedMenu';
 import { MainContainer, PageInnerContainer, PageInnerContainer2, HorizontalMargin, VerticalMargin } from '../components/misc/containers';
 import { MenuText, Header } from '../components/misc/text';
+import Socials from '../components/pages/socials';
 
 import { mainContainers } from '../styles/misc/containerStyles';
 import globalStyle, { homeHeader } from '../styles/globalStyle';
@@ -28,9 +29,10 @@ export default class Portfolio extends Component {
   
     switchContainer = () => {
       if (this.state.selection === 'unselected') {
-        this.setState({ selection: 'selected' })
+        this.setState({ selection: 'selected', menuSelected: true })
       } else {
         this.setState({ selection: 'unselected' })
+        setTimeout(() => this.setState({ menuSelected: false }), 400)
       }
     }
 
@@ -50,6 +52,7 @@ export default class Portfolio extends Component {
           
             <HorizontalMargin id='subname' style={{gridArea: '1 / 2 / 1 / 2', ...mainContainers.horizontal}}>
               <text>DAVID A FIGUEROA</text>
+              <Socials/>
             </HorizontalMargin>            
             <VerticalMargin style={{gridArea: '2 / 1 / 2 / 1', ...mainContainers.vertical}}>
                 <Menu 
@@ -59,23 +62,39 @@ export default class Portfolio extends Component {
 
             <MainContainer style={{gridArea: '2 / 2 / 2 / 2', backgroundColor: globalStyle.colors.portfolioGray}}>
               <PageInnerContainer style={{backgroundColor: 'white'}} pose={this.state.selection} className="header">
-                <div style={{ textAlign: 'left', display: 'flex', flexDirection: 'column', height: '50%', top: '25%', position: 'relative', justifyContent: 'center', alignItems: 'center' }}>
-                    {
-                        portfolioMenu.map((item) => (
-                            <MenuText 
-                                onClick={() => this.setState({ selectedItem: item.key })                            }
-                                style={{ 
-                                    backgroundColor: (this.state.selectedItem === item.key ? globalStyle.colors.electricBlue : null), 
-                                    cursor: 'pointer'
-                                }} 
-                                pose={this.state.selection}
-                                key={item.key}
-                            >
-                                {item.key}
-                            </MenuText>
-                        ))
-                    }
-                </div>
+                {
+                    this.state.menuSelected ?
+                    <div 
+                        style={{ 
+                            textAlign: 'left', 
+                            display: 'flex', 
+                            flexDirection: 'column', 
+                            height: '50%', 
+                            width: '70%',
+                            top: '25%', 
+                            position: 'relative', 
+                            justifyContent: 'center', 
+                            alignItems: 'center' 
+                        }}
+                    >
+                        {
+                            portfolioMenu.map((item) => (
+                                <MenuItem 
+                                    onClick={() => this.setState({ selectedItem: item.key })}
+                                    backgroundColor={item.key === this.state.selectedItem ? globalStyle.colors.electricBlue : null}
+                                    style={{ 
+                                        cursor: 'pointer'
+                                    }} 
+                                    pose={this.state.selection}
+                                    key={item.key}
+                                >
+                                    {item.key}
+                                </MenuItem>
+                            ))
+                        }
+                    </div> :
+                    null
+                }
               </PageInnerContainer>
               <PageInnerContainer2 pose={this.state.keystoneSelection} style={{position: 'absolute', right: '3.3%', height: '86%', backgroundColor: globalStyle.colors.keystoneBlack, cursor: 'default'}}  className="header">
                     <div style={{transform: 'rotate(270deg)', top: '72%', position: 'relative', paddingLeft: '1.3em'}}>

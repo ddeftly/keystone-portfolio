@@ -9,5 +9,6 @@ export const mainContainers = {
         display: 'flex',
         flexDirection: 'row', 
         alignItems: 'center',
+        justifyContent: 'space-between'
     }
 }

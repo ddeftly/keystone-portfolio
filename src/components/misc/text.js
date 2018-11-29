@@ -55,7 +55,7 @@ const MenuT = posed(Menu)({
 }) 
 
 export const MenuText = (props) => (
-    <div style={{ width: '50%', ...props.style }}>
+    <div style={{ width: '50%', ...props.style }} onClick={props.onClick}>
         <MenuT pose={props.pose}>
             {props.children}
         </MenuT>

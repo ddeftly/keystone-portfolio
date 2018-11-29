@@ -51,7 +51,7 @@ export const HomeInnerContainer = styled(Box)`
 // PAGE
 const Box2 = posed.div({
     selected: {
-        width: '20%'
+        width: '15%',
     },
     unselected: {
         width: '0%'

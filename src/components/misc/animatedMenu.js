@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import pose from 'react-pose';
+import posed from 'react-pose';
 import { tween } from 'popmotion';
+import MDButton from '@material-ui/core/Button';
 import { IoIosMenu as Menu, IoIosRemove as Line } from 'react-icons/io';
 
-const yScale = 1.5;
+import globalStyle from '../../styles/globalStyle';
 
-const AniDiv = pose.div({
+const yScale = 1;
+
+const AniDiv = posed.div({
     unselected: {
         y: 0,
         transition: (props) => tween({...props, duration: 250}) 
@@ -60,6 +63,44 @@ export default class AnimatedMenu extends Component {
                 <AniLine pose={this.state.selection}/>
                 <AniLine pose={this.state.selection} ySelected={`${yScale * -.5}em`}/>
             </div>
+        )
+    }
+}
+
+const MenuBox = posed.div({
+    unselected: {
+        opacity: 0,
+        x: '0%',
+        transition: (props) => tween({...props, duration: 100})  
+    }, 
+    selected: {
+        opacity: 1,
+        x: '20%',
+        transition: (props) => tween({...props, duration: 1000})  
+    }
+})
+
+export class MenuItem extends Component {
+
+    render() {
+        return(
+            <MenuBox pose={'selected'}>
+                <MDButton 
+                    onClick={this.props.onClick}
+                    variant='flat'
+                    style={{
+                        textAlign: 'left', 
+                        width: '8em', 
+                        justifyContent: 'flex-start', 
+                        paddingLeft: 0,
+                        backgroundColor: this.props.backgroundColor
+                    }}
+                >
+                    <text style={{fontSize: '2em', color: 'black',}}>
+                        {this.props.children}
+                    </text>
+                </MDButton>
+            </MenuBox>
         )
     }
 }

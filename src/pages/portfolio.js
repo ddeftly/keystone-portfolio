@@ -3,7 +3,7 @@ import { Route, Link } from "react-router-dom";
 
 import { KeystoneOutline } from '../assets/customSVGs';
 import Menu, { MenuItem } from '../components/misc/animatedMenu';
-import { MainContainer, PageInnerContainer, PageInnerContainer2, HorizontalMargin, VerticalMargin } from '../components/misc/containers';
+import { MainContainer, PageInnerContainer, HorizontalMargin, VerticalMargin } from '../components/misc/containers';
 import { MenuText, Header } from '../components/misc/text';
 import Socials from '../components/pages/socials';
 
@@ -14,9 +14,9 @@ import '../styles/globalCSS.css';
 import '../styles/pages/homeStyle.css';
 
 const portfolioMenu = [
-    { key: 'CODE', },
-    { key: 'HEALTH' },
-    { key: 'PLAY' }
+    { key: 'CODE.', },
+    { key: 'WRITE.' },
+    { key: 'PLAY.' }
 ];
 
 export default class Portfolio extends Component {
@@ -24,7 +24,7 @@ export default class Portfolio extends Component {
         keystoneSelection: 'unselected',
         selection: 'unselected',
         menuSelected: false,
-        selectedItem: 'CODE'
+        selectedItem: 'CODE.'
     }
   
     switchContainer = () => {
@@ -96,11 +96,66 @@ export default class Portfolio extends Component {
                     null
                 }
               </PageInnerContainer>
-              <PageInnerContainer2 pose={'selected'} style={{transform: 'rotate(270deg)', position: 'absolute', right: '3.3%', height: '86%', backgroundColor: globalStyle.colors.keystoneBlack, cursor: 'default'}}  className="header">
-                        <Header style={{ color: 'white', fontSize: '5em' }}>
-                            KEYSTONE
-                        </Header>
-              </PageInnerContainer2>
+
+              <div 
+                className='content'
+                style={{ display: 'grid', gridTemplate: 'repeat(12, 1fr) / repeat(12, 1fr)', height: '100%', width: '100%'}}
+              >
+
+              {/* CONTENT QUOTE HEADER */}
+                <div 
+                    style={{
+                        gridArea: '4 / 3 / 8 / 5', 
+                        display: 'grid', 
+                        gridTemplate: 'repeat(3, 1fr) / repeat(4, 1fr)',
+                        backgroundColor: globalStyle.colors.fireyRose,
+                        padding: '1em'
+                    }}
+                >
+                    <text style={{fontSize: '2em', gridArea: '1 / 1 / 1 / 1'}}>
+                        Eat.
+                    </text>
+                    <text style={{fontSize: '2em', gridArea: '2 / 1 / 2 / 1'}}>
+                        Sleep.
+                    </text>
+                    <text style={{fontSize: '2em', gridArea: '3 / 1 / 3 / 1'}}>
+                        Code.
+                    </text>
+                    <text id='special' style={{fontSize: '2em', gridArea: '4 / 1 / 4 / 1', paddingLeft: '1em'}}>
+                        Repeat.
+                    </text>
+                </div>
+
+                {/* CONTENT QUOTE HEADER */}
+                <div
+                    style={{
+                        gridArea: '8 / 3 / 10 / 6',
+                        backgroundColor: '#FCF7F8',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        padding: '1em'
+                    }}
+                >
+                    <text style={{fontSize: '1em', }}>
+                        A passion for producing simple, clean code.
+                    </text>
+                </div>
+
+                {/* CONTENT */}
+                <div
+                    style={{
+                        gridArea: '3 / 7 / 11 / 12',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        padding: '1em',
+                        backgroundColor: 'white'
+                    }}
+                >
+                    <text style={{fontSize: '1em', }}>
+                        A passion for producing simple, clean code.
+                    </text>
+                </div>
+              </div>
             </MainContainer>
 
             <VerticalMargin style={{gridArea: '2 / 3 / 2 / 3', ...mainContainers.vertical}}>

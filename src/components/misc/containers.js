@@ -21,6 +21,7 @@ export const HorizontalMargin = styled.div`
     width: 100%;
 `;
 
+
 /// Posed Components
 //HOME
 const Box = posed.div({
@@ -51,7 +52,7 @@ export const HomeInnerContainer = styled(Box)`
 // PAGE
 const Box2 = posed.div({
     selected: {
-        width: '15%',
+        width: '14%',
     },
     unselected: {
         width: '0%'
@@ -62,14 +63,3 @@ export const PageInnerContainer = styled(Box2)`
     height: 100%;
     position: 'absolute'
 `;
-
-export const PageInnerContainer2 = posed.div({
-    selected: {
-        width: '5.5em',
-        opacity: 1
-    },
-    unselected: {
-        width: '0em',
-        opacity: 0
-    }
-})

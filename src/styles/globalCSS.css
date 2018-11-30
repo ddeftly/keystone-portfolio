@@ -22,3 +22,11 @@
     font-size: .9rem;
     font-weight: 700;
 }
+
+.content {
+    font-family: 'Roboto Slab', sans-serif;
+}
+
+#special {
+    font-style: italic;
+}

@@ -8,7 +8,8 @@ const iconSize = .9;
 const iconStyle = {
     width: `${iconSize}rem`,
     height: `${iconSize}rem`,
-    margin: '.4em',
+    marginLeft: '.4em',
+    marginRight: '.4em',
     cursor: 'pointer'
 };
 

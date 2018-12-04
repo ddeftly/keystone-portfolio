@@ -109,10 +109,11 @@ export default class Portfolio extends Component {
                         display: 'grid', 
                         gridTemplate: 'repeat(3, 1fr) / repeat(4, 1fr)',
                         backgroundColor: globalStyle.colors.fireyRose,
-                        padding: '1em'
+                        padding: '1em',
+
                     }}
                 >
-                    <text style={{fontSize: '2em', gridArea: '1 / 1 / 1 / 1'}}>
+                    <text style={{fontSize: '2em', gridArea: '1 / 1 / 1 / 1',}}>
                         Eat.
                     </text>
                     <text style={{fontSize: '2em', gridArea: '2 / 1 / 2 / 1'}}>
@@ -121,7 +122,7 @@ export default class Portfolio extends Component {
                     <text style={{fontSize: '2em', gridArea: '3 / 1 / 3 / 1'}}>
                         Code.
                     </text>
-                    <text id='special' style={{fontSize: '2em', gridArea: '4 / 1 / 4 / 1', paddingLeft: '1em'}}>
+                    <text id='special' style={{fontSize: '2em', gridArea: '4 / 1 / 4 / 1', paddingLeft: '1.25em', textAlign: 'center'}}>
                         Repeat.
                     </text>
                 </div>
@@ -129,16 +130,12 @@ export default class Portfolio extends Component {
                 {/* CONTENT QUOTE HEADER */}
                 <div
                     style={{
-                        gridArea: '8 / 3 / 10 / 6',
-                        backgroundColor: '#FCF7F8',
+                        gridArea: '8 / 3 / 11 / 6',
+                        backgroundColor: '#EFE9E7',
                         justifyContent: 'center',
                         alignItems: 'center',
-                        padding: '1em'
                     }}
                 >
-                    <text style={{fontSize: '1em', }}>
-                        A passion for producing simple, clean code.
-                    </text>
                 </div>
 
                 {/* CONTENT */}
@@ -148,11 +145,10 @@ export default class Portfolio extends Component {
                         justifyContent: 'center',
                         alignItems: 'center',
                         padding: '1em',
-                        backgroundColor: 'white'
                     }}
                 >
                     <text style={{fontSize: '1em', }}>
-                        A passion for producing simple, clean code.
+                        Experience working with React, React Native, JavaScript, Python, and tons of other important tech stuff.
                     </text>
                 </div>
               </div>

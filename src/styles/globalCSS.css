@@ -23,8 +23,13 @@
     font-weight: 700;
 }
 
+.contentTitle {
+    font-family: 'Roboto', sans-serif
+}
+
 .content {
     font-family: 'Roboto Slab', sans-serif;
+    text-decoration: 'none'
 }
 
 #special {

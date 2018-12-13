@@ -58,7 +58,6 @@ export default class Portfolio extends Component {
             entryObj['date'] = entry.isoDate;
             return(entryObj)
         })
-        console.log(feed)
         this.setState({ mediumFeed: mediumFeed })
     }
 
@@ -104,12 +103,12 @@ export default class Portfolio extends Component {
             )
         } else if (item === 'WRITE.') {
             return(
-                <div style={{ flexDirection: 'column' }}>
+                <div style={{ height: '100%', width: '100%', paddingTop: '3em' }}>
                     {
                         this.state.mediumFeed.map((item, index) => (
-                            <div style={{ width: '100%', height: '5em', marginTop: (index !== 0 ? '.25em' : null) }}>
-                                <a href={item.link}>
-                                    <text style={{fontSize: '1.3em', textDecoration: 'none'}}>
+                            <div style={{ width: '100%', height: '5em', margin: '.25em 0 .25em 0'}}>
+                                <a href={item.link} style={{ textDecoration: 'none', color: 'black' }}>
+                                    <text style={{fontSize: '1.4em', textDecoration: 'none'}}>
                                         {item.title}
                                     </text>
                                 </a>
@@ -219,15 +218,12 @@ export default class Portfolio extends Component {
                         justifyContent: 'center',
                         alignItems: 'center',
                     }}
-                >
-                </div>
+                />
 
                 {/* CONTENT */}
                 <div
                     style={{
                         gridArea: '3 / 7 / 11 / 12',
-                        justifyContent: 'center',
-                        alignItems: 'center',
                         padding: '1em',
                     }}
                 >

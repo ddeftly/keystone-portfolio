@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Route, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Parser from 'rss-parser';
 import Lottie from 'react-lottie';
-import ScrollTrigger from 'react-scroll-trigger';
 
 import { KeystoneOutline } from '../assets/customSVGs';
 import Menu, { MenuItem } from '../components/misc/animatedMenu';
@@ -239,7 +238,7 @@ export default class Portfolio extends Component {
                                         equals happier people.
                                     </text>
                                 </div>
-                                <div style={{ gridArea: ' 8 / 12 / 20 / 18', }}>
+                                <div style={{ gridArea: ' 9 / 12 / 20 / 18', }}>
                                     <text style={{ fontSize: '1.3em', color: 'white', lineHeight: '1.5em', position: 'relative', top: '.1em' }}>
                                         Solid web development means delivering user experiences that are both simple and intriguing.
                                     </text>
@@ -373,10 +372,10 @@ export default class Portfolio extends Component {
                                         FEED
                                     </text>
                                 </div>
-                                <div id='subtitleBold' style={{ gridArea: '2 / 6 / 10 / 10' }}>
+                                <div id='subtitleBold' style={{ gridArea: '1 / 6 / 10 / 11' }}>
                                 {
                                     this.state.mediumFeed.map((item, index) => (
-                                        <div style={{ width: '100%', height: '3.25em', margin: '.25em 0 .25em 0'}}>
+                                        <div style={{ width: '100%', height: '3.2em', margin: '.6em 0 .25em 0'}}>
                                             <a href={item.link} style={{ textDecoration: 'none', color: 'white' }}>
                                                 <text style={{fontSize: '1em', textDecoration: 'none'}}>
                                                     {item.title}

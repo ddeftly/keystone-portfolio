@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
-import { Route, Link } from "react-router-dom";
-import Parser from 'rss-parser';
+import { Link } from "react-router-dom";
 import Lottie from 'react-lottie';
-import ScrollTrigger from 'react-scroll-trigger';
 
 import { DFOutline, HealthKitSVG, SaveMoney, LineChart, Calendar } from '../assets/customSVGs';
-import { MainContainer, PageInnerContainer, HorizontalMargin, VerticalMargin } from '../components/misc/containers';
+import { MainContainer, HorizontalMargin, VerticalMargin } from '../components/misc/containers';
 import Socials from '../components/pages/socials';
-
-import { Code } from '../components/portfolio/content';
 
 import { mainContainers } from '../styles/misc/containerStyles';
 import globalStyle, { homeHeader } from '../styles/globalStyle';
@@ -17,78 +13,9 @@ import '../styles/globalCSS.css';
 
 import '../styles/pages/homeStyle.css';
 
-const portfolioMenu = [
-    { key: 'CODE.', },
-    { key: 'WRITE.' },
-    { key: 'PLAY.' }
-];
-
-export default class Portfolio extends Component {
+export default class Keystone extends Component {
     state = {
-        scrollContent: <Code/>,
-        keystoneSelection: 'unselected',
-        selection: 'unselected',
-        menuSelected: false,
-        selectedItem: 'CODE.',
-        mediumFeed: [],
         lottieStop: true,
-    }
-  
-    switchContainer = () => {
-      if (this.state.selection === 'unselected') {
-        this.setState({ selection: 'selected', menuSelected: true })
-      } else {
-        this.setState({ selection: 'unselected' })
-        setTimeout(() => this.setState({ menuSelected: false }), 400)
-      }
-    }
-
-    getMediumFeed = async () => {
-        let parser = new Parser();
-        let feed = await parser.parseURL('https://cors-anywhere.herokuapp.com/https://medium.com/feed/@David_Figueroa').then(res => {
-            let entries = [];
-            res.items.forEach((item, index) => {
-                if (item.categories) {
-                    entries.push(item)
-                }
-            })
-            let sliceEntries = entries.slice(0, 5)
-            return sliceEntries
-        })
-        let mediumFeed = feed.map(entry => {
-            let entryObj = {};
-            entryObj['title'] = entry.title;
-            entryObj['link'] = entry.link;
-            entryObj['date'] = entry.isoDate;
-            return(entryObj)
-        })
-        this.setState({ mediumFeed: mediumFeed })
-    }
-
-    setContent = (item) => {
-        if (item === 'CODE.') {
-            return(
-                <div/>
-            )
-        } else if (item === 'WRITE.') {
-            return(
-                <div style={{ height: '100%', width: '100%', paddingTop: '3em' }}>
-                    {
-                        this.state.mediumFeed.map((item, index) => (
-                            <div style={{ width: '100%', height: '5em', margin: '.25em 0 .25em 0'}}>
-                                <a href={item.link} style={{ textDecoration: 'none', color: 'black' }}>
-                                    <text style={{fontSize: '1.4em', textDecoration: 'none'}}>
-                                        {item.title}
-                                    </text>
-                                </a>
-                            </div>
-                        ))
-                    }
-                </div>
-            )
-        } else if (item === 'PLAY.') {
-
-        }
     }
 
     triggerLottie = () => {
@@ -96,7 +23,6 @@ export default class Portfolio extends Component {
     }
 
     componentDidMount() {
-        this.getMediumFeed()
         window.addEventListener('scroll', this.triggerLottie())
     }
   
@@ -268,7 +194,7 @@ export default class Portfolio extends Component {
                                 }}
                             >
                                 <div style={{ gridArea: '4 / 3 / 8 / 10', flexDirection: 'column', display: 'flex'}}>
-                                    <LineChart scale={.25}/>
+                                    <LineChart scale={.25} style={{marginLeft: '.25em'}}/>
                                     <text id='subtitleBold' style={{ fontSize: '1.5em', color: 'black', marginTop: '1em'}}>See your data.</text>
                                     <text style={{ fontSize: '1em', color: 'black', marginTop: '1em'}}>
                                         Track anything - habits, work sessions, moods - and Keystone will let you know what affects you the most. 
@@ -282,7 +208,7 @@ export default class Portfolio extends Component {
                                     </text>
                                 </div>
                                 <div style={{ gridArea: '14 / 3 / 18 / 10', flexDirection: 'column', display: 'flex'}}>
-                                    <SaveMoney scale={.25}/>
+                                    <SaveMoney scale={.25} style={{marginLeft: '.2em'}}/>
                                     <text id='subtitleBold' style={{ fontSize: '1.5em', color: 'black', marginTop: '1em'}}>Be happy.</text>
                                     <text style={{ fontSize: '1em', color: 'black', marginTop: '1em'}}>
                                         Everything Keystone has to offer is 100% free. Collect your data, find what matters most, and build a better life.                                    
@@ -313,13 +239,10 @@ export default class Portfolio extends Component {
                                     gridTemplate: 'repeat(10, 1fr) / repeat(10, 1fr)' 
                                 }}
                             >
-                                <div className='titleText' style={{ gridArea: '2 / 3 / 10 / 6', }}>
+                                <div className='titleText' style={{ gridArea: '3 / 3 / 10 / 6', }}>
                                     <text style={{ fontSize: '5em', color: 'white' }}>
                                         DOWN<br/>
                                         LOAD <br/>
-                                    </text>
-                                    <text id='subtitleThin' style={{ fontSize: '2em', color: 'white' }}>
-                                        iOS
                                     </text>
                                 </div>
                                 <div style={{ gridArea: '2 / 6 / 10 / 10' }}>

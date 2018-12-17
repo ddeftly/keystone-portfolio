@@ -183,7 +183,6 @@ export default class Portfolio extends Component {
                             <div style={{ backgroundColor: globalStyle.colors.glacierWhite, gridArea: '1 / 1 / 3 / 6' }}/> 
                             <div style={{ backgroundColor: globalStyle.colors.portfolioPurple, gridArea: '3 / 1 / 6 / 4' }}/>
                             <div style={{ objectFit: 'scale-down', gridArea: '3 / 4 / 6 / 6', display: 'flex', justifyContent: 'center', alignItems: 'center', overflow: 'hidden' }}>
-                                <img src={require('../assets/images/dfphoto.jpg')} style={{ width: '100%' }} alt='profile'/>
                             </div>
                         </div>
 

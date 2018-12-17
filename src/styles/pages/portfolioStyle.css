@@ -1,0 +1,14 @@
+.titleText {
+    font-family: 'Roboto' sans-serif;
+    font-weight: 800;
+}
+
+#subtitleBold {
+    font-family: 'Roboto' sans-serif;
+    font-weight: 600
+}
+
+#subtitleThin {
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 100;
+}

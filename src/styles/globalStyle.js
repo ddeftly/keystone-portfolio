@@ -1,9 +1,11 @@
 const colors = {
     portfolioGray: '#CCCCCC',
+    portfolioPurple: '#484A6A',
     keystoneBlack: '#424242',
+    glacierWhite: '#ECF0F2',
     jetBlack: '#333333',
     electricBlue: '#00E5D2',
-    fireyRose: '#EE596C'
+    fireyRose: '#EE596C',
 }
 
 export const homeHeader = {

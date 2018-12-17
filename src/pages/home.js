@@ -69,7 +69,7 @@ export default class Home extends Component {
               >
                 COME
               </HeaderText>
-              <HomeInnerContainer backgroundColor={globalStyle.colors.keystoneBlack} pose={this.state.selection} >
+              <HomeInnerContainer backgroundColor={globalStyle.colors.fireyRose} pose={this.state.selection} >
                 <HeaderText 
                   id='main'
                   pose={this.state.selection}

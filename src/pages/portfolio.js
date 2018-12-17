@@ -356,7 +356,7 @@ export default class Portfolio extends Component {
                         <div style={{ height: '5%', width: '100%', backgroundColor: 'white' }}/>
                         
                         {/* FEED  */}
-                        <div style={{ height: '45%', width: '100%', backgroundColor: globalStyle.colors.keystoneBlack }}>
+                        <div style={{ height: '50%', width: '100%', backgroundColor: globalStyle.colors.keystoneBlack }}>
                             <div 
                                 style={{ 
                                     position: 'absolute', 
@@ -375,7 +375,7 @@ export default class Portfolio extends Component {
                                 <div id='subtitleBold' style={{ gridArea: '1 / 6 / 10 / 11' }}>
                                 {
                                     this.state.mediumFeed.map((item, index) => (
-                                        <div style={{ width: '100%', height: '3.2em', margin: '.6em 0 .25em 0'}}>
+                                        <div style={{ width: '100%', height: '3.2em', marginTop: '1em'}}>
                                             <a href={item.link} style={{ textDecoration: 'none', color: 'white' }}>
                                                 <text style={{fontSize: '1em', textDecoration: 'none'}}>
                                                     {item.title}

@@ -3,7 +3,9 @@ const colors = {
     portfolioPurple: '#484A6A',
     keystoneBlack: '#424242',
     glacierWhite: '#ECF0F2',
+    eggshellWhite: '#FBFCFC',
     jetBlack: '#333333',
+    iguanaGreen: '#78C585',
     electricBlue: '#00E5D2',
     fireyRose: '#EE596C',
 }

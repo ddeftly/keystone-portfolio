@@ -7,6 +7,7 @@ import Keystone from './pages/keystone';
 
 const App = () => (
   <Switch>
+    <Route path='/home' component={Home}/>
     <Route path='/portfolio' component={Portfolio}/>
     <Route path='/keystone' component={Keystone}/>
     <Home/>
